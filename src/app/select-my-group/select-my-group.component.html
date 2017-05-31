@@ -1,0 +1,21 @@
+<div class='body-with-margin'>
+
+  <md-input-container>
+    <input mdInput
+      [(ngModel)]="myUserID"
+      placeholder="自分のユーザーIDを入力してください"
+      [mdAutocomplete]="auto"
+      [formControl]="stateCtrl">
+  </md-input-container>
+  <md-autocomplete #auto="mdAutocomplete">
+    <md-option *ngFor="let userid of filteredUserIDs | async" [value]="userid">
+      {{ userid }}
+    </md-option>
+  </md-autocomplete>
+
+
+  <p *ngIf="exists( myUserID )">
+    あなたのグループは第{{getMyGroup(myUserID) + 1}}グループです。
+    第{{getVotingGroup(myUserID) + 1}}グループに投票してください。
+  </p>
+</div>

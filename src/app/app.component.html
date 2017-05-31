@@ -1,0 +1,21 @@
+
+<md-toolbar color='primary' class='header'>
+  <span>{{title}}</span>
+</md-toolbar>
+
+<div class='main'>
+  <md-tab-group>
+    <md-tab label="自分の所属グループの確認">
+      <select-my-group></select-my-group>
+    </md-tab>
+    <md-tab label="提出物へのリンク集">
+      <app-links></app-links>
+    </md-tab>
+    <md-tab label="投票">
+      <div class='body-with-margin'>
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSen2xZk5-WMqoYw4casr_tpIWvZ0gS9oVUwSlhYsEn07eb3fg/viewform?embedded=true" width="760" height="1200" frameborder="0" marginheight="0" marginwidth="0">読み込んでいます...</iframe>
+      </div>
+    </md-tab>
+  </md-tab-group>
+</div>
+

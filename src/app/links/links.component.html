@@ -1,0 +1,25 @@
+
+<!--<md-checkbox  *ngFor="let url of toURL(IDs); let idx = index ">
+  <a [href]="url"></a>
+</md-checkbox>-->
+
+<!--<a href="/home/6249044629/public_html/index.html">link</a>-->
+<!--<md-list>
+  <md-list-item *ngFor="let todo of todoList" [class.completed]="todo.completed">
+    <input type="checkbox" [(ngModel)]="todo.completed">
+    {{ todo.title }}
+  </md-list-item>
+</md-list>-->
+
+<div class='body-with-margin'>
+
+  <md-select placeholder="グループを選択してください" [(ngModel)]="myGroup">
+    <md-option *ngFor="let group of groups" [value]="group">第{{ group }}グループ</md-option>
+  </md-select>
+
+  <md-nav-list dense>
+    <md-list-item *ngFor="let id of getIDsOfGroupWithIndex( myGroup, IDs ); let idx = index">
+      <a md-line [href]="toURL(id)" target="_blank" >{{myGroup}}-{{idx + 1}} : {{id}}</a>
+    </md-list-item>
+  </md-nav-list>
+</div>
